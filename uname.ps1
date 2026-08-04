@@ -112,7 +112,7 @@ Source: github.com/aallon-pituus/uname-powershell-windows
                     break
                 }
                 default {
-                    Write-Error "uname: unrecognized option '$token'"
+                    Write-Error "unrecognized option '$token'"
                     return
                 }
             }
