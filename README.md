@@ -1,5 +1,5 @@
 # uname for Windows (as a PowerShell command)
-Emulates the POSIX `uname` utility. On Linux and macOS, the script won't run, so the user can use the better native `uname` utility tailored for real UNIX systems.
+Emulates the GNU `uname` utility. On Linux and macOS, the script won't run, so the user can use the better native `uname` utility tailored for real UNIX systems.
 
 On Windows, almost every field is derived live from CIM/WMI, the registry, and .NET, so no values that are found there are hardcoded.
 
@@ -8,9 +8,9 @@ On Windows, almost every field is derived live from CIM/WMI, the registry, and .
 2. Open a PowerShell in the same directory where the scripts are located
 3. Run `./add_to_powershell_profile.ps1`
 4. Run `. $PROFILE`
-5. There. Now you've installed it!
+5. Now you've installed it! Just use `uname` with your desired flags to run it!
 
-You can try if it's there by running `uname --version`
+You can verify it's installed by running `uname --version`
 
 # Fields and their Windows data sources
     
@@ -31,7 +31,7 @@ You can try if it's there by running `uname --version`
                               where the timestamp comes from Win32_OperatingSystem
                               .InstallDate (a real CIM datetime, never a placeholder).
     -m | --machine            [System.Runtime.InteropServices.RuntimeInformation]
-                              ::OSArchitecture, mapped to POSIX tokens:
+                              ::OSArchitecture, mapped to conventional GNU/Linux tokens:
                                X64   -> x86_64   Arm64 -> aarch64
                                X86   -> i686     Arm   -> armv7l   S390x -> s390x
                               Falls back to $Env:PROCESSOR_ARCHITECTURE.
@@ -62,7 +62,7 @@ Flags may be combined in a single argument (-srv) or passed separately (-s -r -v
 
 `OperatingSystem`: Print the operating-system marketing name. Flag: -o | --operating-system
 
-`All`: Print all fields in POSIX order: s n r v m p i o. Flag: -a | --all
+`All`: Print all fields in GNU order: s n r v m p i o. Flag: -a | --all
 
 # Examples
 

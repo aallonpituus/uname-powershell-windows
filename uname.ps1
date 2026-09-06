@@ -44,12 +44,12 @@ Print certain system information.  With no OPTION, same as -s.
     if ($showVersion) {
         @"
 uname (Windows Emulation) 1.0.0
-Copyright (C) 2026 aallon-pituus 
+Copyright (C) 2026 aallonpituus 
 This is free software: you are free to change and redistribute it.
 This software is licensed under the terms of the MIT license.
 There is NO WARRANTY, to the extent permitted by law.
 
-Source: github.com/aallon-pituus/uname-powershell-windows
+Source: github.com/aallonpituus/uname-powershell-windows
 "@
         return
     }
